@@ -1,0 +1,11 @@
+.header {
+    font-size: 18px;
+    margin: 20px;
+}
+
+.header__newTask {
+    padding: 15px;
+    background-color: white;
+    margin-bottom: 3px;
+    font-size: 18px;
+}
