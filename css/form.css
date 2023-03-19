@@ -1,0 +1,22 @@
+.form {
+    background-color: white;
+    box-shadow: 1px 1px 3px #ddd;
+    padding: 15px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 400px;
+}
+
+.form__button {
+    background-color: teal;
+    border: 1px solid hsl(180, 100%, 40%);
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+}
