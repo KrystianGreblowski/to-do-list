@@ -11,3 +11,13 @@
 .list__item--done {
     text-decoration: line-through;
 }
+
+.list__button {
+    padding: 12px;
+    background-color: green;
+    border: none;
+}
+
+.list__button--remove {
+    background-color: red;
+}
