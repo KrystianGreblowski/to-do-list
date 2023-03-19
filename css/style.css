@@ -5,3 +5,18 @@ html {
 *, ::after, ::before {
     box-sizing: inherit;
 }
+
+.body {
+    font-family: 'Lato', sans-serif;
+    background-color: #eee;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.list__test {
+    background-color: crimson; 
+}
+
+.list__test--last {
+    background-color: blue;
+}
