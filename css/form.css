@@ -4,13 +4,13 @@
     padding: 15px;
     margin: 20px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .form__input {
     border: 1px solid #ccc;
     padding: 5px;
-    width: 400px;
+    flex-basis: 500px;
 }
 
 .form__button {
@@ -19,4 +19,6 @@
     padding: 5px;
     color: white;
     cursor: pointer;
+    flex-basis: 120px;
+    margin-left: 15px;
 }
