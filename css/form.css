@@ -19,5 +19,6 @@
     color: white;
     cursor: pointer;
     flex-basis: 120px;
+    flex-shrink: 0;
     margin-left: 15px;
 }
