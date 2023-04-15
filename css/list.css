@@ -1,7 +1,7 @@
 .list {
     list-style: none;
     padding-left: 0;
-    margin-top: 2px;
+    margin-top: 0;
 }
 
 .list__item {
@@ -32,4 +32,6 @@
 
 .list__button--remove {
     background-color: red;
+    color: white;
+    justify-self: end;
 }

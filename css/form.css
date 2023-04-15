@@ -1,15 +1,15 @@
 .form {
+    display: grid;
+    grid-template-columns: auto 120px;
+    grid-gap: 15px;
     background-color: white;
     box-shadow: 1px 1px 3px #ddd;
     padding: 15px;
-    display: flex;
-    align-items: center;
 }
 
 .form__input {
     border: 1px solid #ccc;
     padding: 5px;
-    flex-basis: 535px;
 }
 
 .form__button {
@@ -18,7 +18,4 @@
     padding: 5px;
     color: white;
     cursor: pointer;
-    flex-basis: 120px;
-    flex-shrink: 0;
-    margin-left: 15px;
 }
