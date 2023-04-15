@@ -1,6 +1,6 @@
 .list {
     list-style: none;
-    margin-top: 0;
+    margin: 0;
     background-color: white;
     padding: 10px;
 }
@@ -8,10 +8,9 @@
 .list__item {
     display: grid;
     padding: 15px;
-    margin-bottom: 2px;
     grid-template-columns: auto 1fr auto;
-	grid-gap: 10px;
-	align-items: center;
+    grid-gap: 10px;
+    align-items: center;
     border-bottom: 2px solid #eee;
 }
 
