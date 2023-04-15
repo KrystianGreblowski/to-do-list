@@ -14,7 +14,7 @@
 	align-items: center;
 }
 
-.list__item--done {
+.list__content--done {
     text-decoration: line-through;
 }
 
@@ -33,5 +33,4 @@
 .list__button--remove {
     background-color: red;
     color: white;
-    justify-self: end;
 }
