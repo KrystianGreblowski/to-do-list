@@ -24,6 +24,7 @@
     border: none;
     padding: 0;
     background-color: green;
+    cursor: pointer;
 }
 
 .list__button--done {
