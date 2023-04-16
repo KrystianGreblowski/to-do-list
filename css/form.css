@@ -1,10 +1,11 @@
 .form {
     display: grid;
-    grid-template-columns: auto 120px;
+    grid-template-columns: auto 130px;
     grid-gap: 15px;
     background-color: white;
     box-shadow: 1px 1px 3px #ddd;
     padding: 15px;
+    font-size: 14px;
 }
 
 .form__input {
