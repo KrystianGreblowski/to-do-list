@@ -20,6 +20,11 @@
         render();
     }
 
+    const clearFormField = () => {
+        document.querySelector(".js-newTask").value = "";
+        document.querySelector(".js-newTask").focus();
+    }
+
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -69,8 +74,8 @@
 
         addNewTask(newTaskContent);
 
-        document.querySelector(".js-newTask").value = "";
-        document.querySelector(".js-newTask").focus();
+        clearFormField();
+
     }
 
     const init = () => {

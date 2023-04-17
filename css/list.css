@@ -8,10 +8,10 @@
 
 .list__item {
     display: grid;
-    padding: 15px;
     grid-template-columns: auto 1fr auto;
     grid-gap: 10px;
     align-items: center;
+    padding: 15px;
     border-bottom: 2px solid #eee;
 }
 
