@@ -25,8 +25,16 @@
     height: 30px;
     border: none;
     padding: 0;
-    background-color: green;
+    background-color: hsl(120, 100%, 25%);
     cursor: pointer;
+}
+
+.list__button:hover {
+    background-color: hsl(120, 100%, 30%);
+}
+
+.list__button:active {
+    background-color: hsl(120, 100%, 35%);
 }
 
 .list__button--done {
@@ -34,6 +42,14 @@
 }
 
 .list__button--remove {
-    background-color: red;
+    background-color: hsl(0, 100%, 50%);
     color: white;
+}
+
+.list__button--remove:hover {
+    background-color: hsl(0, 100%, 60%);
+}
+
+.list__button--remove:active {
+    background-color: hsl(0, 100%, 70%);
 }
