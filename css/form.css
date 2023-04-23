@@ -1,10 +1,10 @@
 .form {
     display: grid;
-    grid-template-columns: auto 120px;
-    grid-gap: 15px;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
     background-color: white;
     box-shadow: 1px 1px 3px #ddd;
-    padding: 15px;
+    padding: 20px;
     font-size: 14px;
 }
 
@@ -16,13 +16,13 @@
 
 .form__input {
     border: 1px solid #ccc;
-    padding: 8px;
+    padding: 10px;
 }
 
 .form__button {
     background-color: teal;
     border: 1px solid hsl(180, 100%, 40%);
-    padding: 5px;
+    padding: 10px;
     color: white;
     cursor: pointer;
 }
