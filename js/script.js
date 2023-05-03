@@ -47,7 +47,9 @@
         });
     }
 
-    const render = () => {
+    const bindButtonsEvents = () => { }
+
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
@@ -69,8 +71,16 @@
         }
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
+    }
+
+    const renderButtons = () => { }
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
 
         bindEvents();
+        bindButtonsEvents();
     }
 
     const onFormSubmit = (event) => {
