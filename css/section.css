@@ -3,6 +3,24 @@
     background-color: white;
     margin-top: 10px;
     margin-bottom: 2px;
-    font-size: 20px;
     box-shadow: 1px 1px 3px #ddd;
+}
+
+.section__header--buttons {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 30px;
+    align-items: center;
+}
+
+.section__title {
+    font-size: 20px;
+    margin: 0;
+}
+
+.section__button {
+    background-color: white;
+    color: teal;
+    margin: 0;
+    font-size: 15px;
 }
