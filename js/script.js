@@ -1,6 +1,7 @@
 {
     let tasks = [];
-
+    let allTasksDone = false;
+    
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
@@ -53,21 +54,25 @@
         const hideTasksDoneButton = document.querySelector(".js-hideTasksDoneButton");
         const completeAllTasksButton = document.querySelector(".js-completeAllTasksButton");
 
-        hideTasksDoneButton.addEventListener("click", () => {
-
-        });
+        hideTasksDoneButton.addEventListener("click", () => { });
 
         completeAllTasksButton.addEventListener("click", () => {
-            for (index = 0; index < tasks.length; index++) {
-                tasks = [
-                    ...tasks.slice(0, index),
-                    { ...tasks[index], done: true },
-                    ...tasks.slice(index + 1),
-                ];
+            if (!allTasksDone) {
+                for (index = 0; index < tasks.length; index++) {
+                    tasks = [
+                        ...tasks.slice(0, index),
+                        { ...tasks[index], done: true },
+                        ...tasks.slice(index + 1),
+                    ];
+                }
+
+                allTasksDone = true;
             }
 
             render();
         });
+
+        if (allTasksDone) completeAllTasksButton.setAttribute("disabled", "");
     }
 
     const renderTasks = () => {
@@ -95,19 +100,15 @@
     }
 
     const renderButtons = () => {
-        let hideTasksDoneButtonHtmlString = "";
-        let completeAllTasksButtonHtmlString = "";
+        let htmlString = "";
 
-        hideTasksDoneButtonHtmlString += `   
-            <p class="section__button">Ukryj ukończone</p>
+        htmlString += `   
+            <h2 class="section__title">Lista zadań</h2>
+            <button class="section__button js-hideTasksDoneButton">Ukryj ukończone</button>
+            <button class="section__button js-completeAllTasksButton">Ukończ wszystkie</button> 
         `;
 
-        completeAllTasksButtonHtmlString += `   
-            <p class="section__button">Ukończ wszystkie</p> 
-        `;
-
-        document.querySelector(".js-hideTasksDoneButton").innerHTML = hideTasksDoneButtonHtmlString;
-        document.querySelector(".js-completeAllTasksButton").innerHTML = completeAllTasksButtonHtmlString;
+        document.querySelector(".js-buttons").innerHTML = htmlString;
     }
 
     const render = () => {
