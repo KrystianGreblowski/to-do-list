@@ -5,7 +5,7 @@
 
     const checkIfAllTasksMarked = () => {
         tasks.every(({ done }) => done) ? allTasksDone = true : allTasksDone = false;
-    }
+    };
 
     const toggleHideTasks = () => hideDoneTasks = !hideDoneTasks;
 
@@ -17,7 +17,7 @@
 
         checkIfAllTasksMarked();
         render();
-    }
+    };
 
     const removeTask = (taskIndex) => {
         tasks = [
@@ -27,7 +27,7 @@
 
         checkIfAllTasksMarked();
         render();
-    }
+    };
 
     const toggleTaskDone = (taskIndex) => {
         tasks = [
@@ -38,7 +38,7 @@
 
         checkIfAllTasksMarked();
         render();
-    }
+    };
 
     const completeAllTasks = () => {
         if (!allTasksDone) {
@@ -52,7 +52,7 @@
 
             allTasksDone = true;
         }
-    }
+    };
 
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -62,7 +62,7 @@
                 removeTask(index);
             });
         });
-    }
+    };
 
     const bindToggleDoneEvents = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
@@ -72,7 +72,7 @@
                 toggleTaskDone(index);
             });
         });
-    }
+    };
 
     const bindButtonsEvents = () => {
         const hideTasksDone = document.querySelector(".js-hideTasksDone");
@@ -89,7 +89,7 @@
         });
 
         if (allTasksDone) completeAllTasksButton.setAttribute("disabled", "");
-    }
+    };
 
     const renderTasks = () => {
         let htmlString = "";
@@ -113,7 +113,7 @@
         }
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
-    }
+    };
 
     const renderButtons = () => {
         let htmlString = "";
@@ -131,7 +131,7 @@
         `;
 
         document.querySelector(".js-buttons").innerHTML = htmlString;
-    }
+    };
 
     const render = () => {
         renderTasks();
@@ -140,7 +140,7 @@
         bindRemoveEvents();
         bindToggleDoneEvents();
         bindButtonsEvents();
-    }
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -154,7 +154,7 @@
         }
 
         newTaskElement.focus();
-    }
+    };
 
     const init = () => {
         render();
@@ -162,7 +162,7 @@
         const form = document.querySelector(".js-form");
 
         form.addEventListener("submit", onFormSubmit);
-    }
+    };
 
     init();
 }
