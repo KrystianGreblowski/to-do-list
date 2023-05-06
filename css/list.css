@@ -31,6 +31,7 @@
     padding: 0;
     background-color: hsl(120, 100%, 25%);
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .list__button:hover {
