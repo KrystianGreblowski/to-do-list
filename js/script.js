@@ -37,6 +37,20 @@
         render();
     }
 
+    const completeAllTasks = () => {
+        if (!allTasksDone) {
+            for (index = 0; index < tasks.length; index++) {
+                tasks = [
+                    ...tasks.slice(0, index),
+                    { ...tasks[index], done: true },
+                    ...tasks.slice(index + 1),
+                ];
+            }
+
+            allTasksDone = true;
+        }
+    }
+
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -64,18 +78,7 @@
         hideTasksDoneButton.addEventListener("click", () => { });
 
         completeAllTasksButton.addEventListener("click", () => {
-            if (!allTasksDone) {
-                for (index = 0; index < tasks.length; index++) {
-                    tasks = [
-                        ...tasks.slice(0, index),
-                        { ...tasks[index], done: true },
-                        ...tasks.slice(index + 1),
-                    ];
-                }
-
-                allTasksDone = true;
-            }
-
+            completeAllTasks();
             render();
         });
 
