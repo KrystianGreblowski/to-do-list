@@ -7,6 +7,8 @@
         tasks.every(({ done }) => done) ? allTasksDone = true : allTasksDone = false;
     }
 
+    const toggleHideTasks = () => hideDoneTasks = !hideDoneTasks;
+
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
@@ -52,8 +54,6 @@
         }
     }
 
-    const toggleHideShowTasksButton = () => hideDoneTasks = !hideDoneTasks;
-
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -75,11 +75,11 @@
     }
 
     const bindButtonsEvents = () => {
-        const hideTasksDoneButton = document.querySelector(".js-hideTasksDoneButton");
-        const completeAllTasksButton = document.querySelector(".js-completeAllTasksButton");
+        const hideTasksDone = document.querySelector(".js-hideTasksDone");
+        const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
 
-        hideTasksDoneButton.addEventListener("click", () => {
-            toggleHideShowTasksButton();
+        hideTasksDone.addEventListener("click", () => {
+            toggleHideTasks();
             render();
         });
 
@@ -96,7 +96,7 @@
 
         for (const task of tasks) {
             htmlString += `
-                <li class="list__item ${(task.done && hideDoneTasks) ? "list__item--hidden": ""}">
+                <li class="list__item ${(task.done && hideDoneTasks) ? "list__item--hidden" : ""}">
                     <button class="list__button ${task.done ? "list__button--done" : ""} js-done">
                         ${task.done ? "✔" : ""}
                     </button>
@@ -121,11 +121,11 @@
         htmlString += `   
             <h2 class="section__title">Lista zadań</h2>
             
-            <button class="section__button js-hideTasksDoneButton">
+            <button class="section__button js-hideTasksDone">
                 ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
             
-            <button class="section__button js-completeAllTasksButton">Ukończ wszystkie</button> 
+            <button class="section__button js-completeAllTasks">Ukończ wszystkie</button> 
         `;
 
         document.querySelector(".js-buttons").innerHTML = htmlString;
