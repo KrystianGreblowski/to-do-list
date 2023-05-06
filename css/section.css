@@ -13,6 +13,12 @@
     align-items: center;
 }
 
+@media (max-width: 767px) {
+    .section__header--buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
 .section__title {
     font-size: 20px;
     margin: 0;
