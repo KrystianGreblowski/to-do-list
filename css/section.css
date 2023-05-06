@@ -27,6 +27,10 @@
     border: none;
 }
 
+.section__button--hidden {
+    display: none;
+}
+
 .section__button:disabled {
     color: #ccc;
 }

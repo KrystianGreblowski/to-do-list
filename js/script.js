@@ -121,11 +121,13 @@
         htmlString += `   
             <h2 class="section__title">Lista zadań</h2>
             
-            <button class="section__button js-hideTasksDone">
+            <button class="section__button ${!tasks.length ? "section__button--hidden" : ""} js-hideTasksDone">
                 ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
             
-            <button class="section__button js-completeAllTasks">Ukończ wszystkie</button> 
+            <button class="section__button ${!tasks.length ? "section__button--hidden" : ""} js-completeAllTasks">
+                Ukończ wszystkie
+            </button> 
         `;
 
         document.querySelector(".js-buttons").innerHTML = htmlString;
