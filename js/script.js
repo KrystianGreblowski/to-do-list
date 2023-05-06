@@ -2,7 +2,9 @@
     let tasks = [];
     let allTasksDone = false;
 
-    const checkIfAllTasksMarked = tasks => tasks.every(({ done }) => done);
+    const checkIfAllTasksMarked = () => {
+        tasks.every(({ done }) => done) ? allTasksDone = true : allTasksDone = false;
+    }
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -10,8 +12,7 @@
             { content: newTaskContent },
         ];
 
-        checkIfAllTasksMarked(tasks) ? allTasksDone = true : allTasksDone = false;
-
+        checkIfAllTasksMarked();
         render();
     }
 
@@ -21,8 +22,7 @@
             ...tasks.slice(taskIndex + 1),
         ];
 
-        checkIfAllTasksMarked(tasks) ? allTasksDone = true : allTasksDone = false;
-
+        checkIfAllTasksMarked();
         render();
     }
 
@@ -33,8 +33,7 @@
             ...tasks.slice(taskIndex + 1),
         ];
 
-        checkIfAllTasksMarked(tasks) ? allTasksDone = true : allTasksDone = false;
-
+        checkIfAllTasksMarked();
         render();
     }
 
