@@ -87,8 +87,6 @@
             completeAllTasks();
             render();
         });
-
-        if (allTasksDone) completeAllTasksButton.setAttribute("disabled", "");
     };
 
     const renderTasks = () => {
@@ -118,14 +116,13 @@
     const renderButtons = () => {
         let htmlString = "";
 
-        htmlString += `   
-            <h2 class="section__title">Lista zadań</h2>
-            
+            htmlString += `   
+            <h2 class="section__title">Lista zadań</h2>     
             <button class="section__button ${!tasks.length ? "section__button--hidden" : ""} js-hideTasksDone">
                 ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
-            </button>
-            
-            <button class="section__button ${!tasks.length ? "section__button--hidden" : ""} js-completeAllTasks">
+            </button>        
+            <button class="section__button ${!tasks.length ? "section__button--hidden" : ""} js-completeAllTasks" 
+            ${tasks.every(({ done }) => done) ? "disabled" : ""}>
                 Ukończ wszystkie
             </button> 
         `;
@@ -144,7 +141,7 @@
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-
+        
         const newTaskElement = document.querySelector(".js-newTask");
         const newTaskContent = newTaskElement.value.trim();
 
