@@ -1,11 +1,6 @@
 {
     let tasks = [];
     let hideDoneTasks = false;
-    let allTasksDone = false;
-
-    const checkIfAllTasksMarked = () => {
-        tasks.every(({ done }) => done) ? allTasksDone = true : allTasksDone = false;
-    };
 
     const toggleHideTasks = () => hideDoneTasks = !hideDoneTasks;
 
@@ -15,17 +10,12 @@
             { content: newTaskContent },
         ];
 
-        checkIfAllTasksMarked();
         render();
     };
 
     const removeTask = (taskIndex) => {
-        tasks = [
-            ...tasks.slice(0, taskIndex),
-            ...tasks.slice(taskIndex + 1),
-        ];
+        tasks = tasks.filter((task) => task !== tasks[taskIndex]);
 
-        checkIfAllTasksMarked();
         render();
     };
 
@@ -36,22 +26,16 @@
             ...tasks.slice(taskIndex + 1),
         ];
 
-        checkIfAllTasksMarked();
         render();
     };
 
-    const completeAllTasks = () => {
-        if (!allTasksDone) {
-            for (index = 0; index < tasks.length; index++) {
-                tasks = [
-                    ...tasks.slice(0, index),
-                    { ...tasks[index], done: true },
-                    ...tasks.slice(index + 1),
-                ];
-            }
+    const markAllTasksDone = () => {
+        tasks = tasks.map((task) => ({
+            ...task,
+            done: true,
+        }));
 
-            allTasksDone = true;
-        }
+        render();
     };
 
     const bindRemoveEvents = () => {
@@ -84,7 +68,7 @@
         });
 
         completeAllTasksButton.addEventListener("click", () => {
-            completeAllTasks();
+            markAllTasksDone();
             render();
         });
     };
@@ -116,7 +100,7 @@
     const renderButtons = () => {
         let htmlString = "";
 
-            htmlString += `   
+        htmlString += `   
             <h2 class="section__title">Lista zadań</h2>     
             <button class="section__button ${!tasks.length ? "section__button--hidden" : ""} js-hideTasksDone">
                 ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
@@ -141,7 +125,7 @@
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        
+
         const newTaskElement = document.querySelector(".js-newTask");
         const newTaskContent = newTaskElement.value.trim();
 
