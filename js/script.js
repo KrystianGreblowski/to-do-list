@@ -109,12 +109,11 @@
 
         let htmlString = "";
 
-        htmlString += `
-            <h2 class="section__title">Lista zadań</h2>     
-            <button class="section__button js-toggleHideTasksDone">
+        htmlString += `     
+            <button class="section__singleButton js-toggleHideTasksDone">
                 ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>        
-            <button class="section__button js-markAllTasksDone" 
+            <button class="section__singleButton js-markAllTasksDone" 
             ${tasks.every(({ done }) => done) ? "disabled" : ""}>
                 Ukończ wszystkie
             </button> 
