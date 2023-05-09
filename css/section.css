@@ -8,14 +8,13 @@
 
 .section__header--buttons {
     display: grid;
-    grid-template-columns: 1fr auto auto;
-    grid-gap: 30px;
-    align-items: center;
+    grid-template-columns: 1fr auto;
 }
 
 @media (max-width: 767px) {
     .section__header--buttons {
         grid-template-columns: 1fr;
+        grid-gap: 30px;
     }
 }
 
@@ -24,7 +23,19 @@
     margin: 0;
 }
 
-.section__button {
+.section__buttons {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+}
+
+@media (max-width: 767px) {
+    .section__buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+.section__singleButton {
     background-color: white;
     color: teal;
     margin: 0;
@@ -35,18 +46,14 @@
     transition: 0.2s;
 }
 
-.section__button--hidden {
-    display: none;
-}
-
-.section__button:hover {
+.section__singleButton:hover {
     color: hsl(180, 100%, 35%);
 }
 
-.section__button:active {
+.section__singleButton:active {
     color: hsl(180, 100%, 40%);
 }
 
-.section__button:disabled {
+.section__singleButton:disabled {
     color: #ccc;
 }
