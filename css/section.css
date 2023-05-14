@@ -36,7 +36,7 @@
 }
 
 .section__singleButton {
-    background-color: white;
+    background-color: transparent;
     color: teal;
     margin: 0;
     padding: 0;
