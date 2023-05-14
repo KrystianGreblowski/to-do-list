@@ -2,7 +2,7 @@
     let tasks = [];
     let hideDoneTasks = false;
 
-    const toggleHideTasks = () => {
+    const toggleHideDoneTasks = () => {
         hideDoneTasks = !hideDoneTasks;
         render();
     }
@@ -26,7 +26,7 @@
             },
             ...tasks.slice(taskIndex + 1),
         ];
-        
+
         render();
     };
 
@@ -64,7 +64,7 @@
         const markAllTasksDoneElement = document.querySelector(".js-markAllTasksDone");
 
         if (toggleHideTasksDoneElement) {
-            toggleHideTasksDoneElement.addEventListener("click", toggleHideTasks);
+            toggleHideTasksDoneElement.addEventListener("click", toggleHideDoneTasks);
         }
 
         if (markAllTasksDoneElement) {
