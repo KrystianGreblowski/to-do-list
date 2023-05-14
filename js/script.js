@@ -4,32 +4,29 @@
 
     const toggleHideTasks = () => {
         hideDoneTasks = !hideDoneTasks;
-
         render();
     }
 
     const addNewTask = (newTaskContent) => {
-        tasks = [
-            ...tasks,
-            { content: newTaskContent },
-        ];
-
+        tasks = [...tasks, { content: newTaskContent }];
         render();
     };
 
     const removeTask = (taskIndex) => {
         tasks = tasks.filter((task) => task !== tasks[taskIndex]);
-
         render();
     };
 
     const toggleTaskDone = (taskIndex) => {
         tasks = [
             ...tasks.slice(0, taskIndex),
-            { ...tasks[taskIndex], done: ((tasks[taskIndex].done) ? false : true) },
+            {
+                ...tasks[taskIndex],
+                done: ((tasks[taskIndex].done) ? false : true)
+            },
             ...tasks.slice(taskIndex + 1),
         ];
-
+        
         render();
     };
 
