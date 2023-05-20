@@ -1,5 +1,7 @@
 # To-Do List
 
+## Description
+
 It's a simple to-do list where you can add, check off or remove tasks. It's a website I created as part of a project for the YouCode course.
 
 ## Demo
