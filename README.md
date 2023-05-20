@@ -8,7 +8,7 @@ It's a simple to-do list where you can add, check off or remove tasks. It's a we
 
 ## Preview
 
-![homepage demo](images/demo.gif)
+![To-do list demo](images/demo.gif)
 
 ## Technologies
 - HTML
