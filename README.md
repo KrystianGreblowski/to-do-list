@@ -2,7 +2,7 @@
 
 ## Description
 
-It's a simple to-do list where you can add, check off or remove tasks. It's a website I created as part of a project for the YouCode course.
+It's a to-do list where you can add, check off or remove tasks. It's an application I created as part of a project for the YouCode Frontend Developer course.
 
 ## Demo
 
