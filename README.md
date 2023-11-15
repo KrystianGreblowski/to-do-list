@@ -2,7 +2,7 @@
 
 ## Description
 
-It's a to-do list where you can add, check off or remove tasks. 
+It's a task list where you can add, tick or remove tasks.
 
 It's an application I created as part of a project for the YouCode Frontend Developer course.
 
